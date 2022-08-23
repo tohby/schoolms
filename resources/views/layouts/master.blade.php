@@ -37,10 +37,10 @@
         @include('layouts/navbar')
 
         <div class="main">
-            @if(session('success') || session('error') || count($errors) > 0)
-            <div class="container-fluid my-3">
-                @include('layouts/messages')
-            </div>
+            @if (session('success') || session('error') || count($errors) > 0)
+                <div class="container-fluid my-3">
+                    @include('layouts/messages')
+                </div>
             @endif
             @yield('content')
         </div>
@@ -52,7 +52,7 @@
                     <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
                         <li class="list-inline-item px-0 px-sm-2">
                             <p class="mb-0 text-center text-lg-start">© 2021-<span class="current-year"></span> <a
-                                    class="text-primary fw-normal">Medi</a>
+                                    class="text-primary fw-normal">School</a>
                             </p>
                         </li>
                     </ul>
