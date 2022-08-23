@@ -37,7 +37,7 @@
     <form method="POST" action="{{ route('login') }}" class="form-signin">
         @csrf
         <div class="text-center mb-4">
-            <h1 class="h1 mb-3 font-weight-bold">Travello</h1>
+            <h1 class="h1 mb-3 font-weight-bold">School MS</h1>
             <p>Login to continue</p>
         </div>
 
