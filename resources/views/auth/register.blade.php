@@ -9,7 +9,7 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <meta http-equiv="Content-Security-Policy"
         content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://platform.linkedin.com ">
-    <title>Travello</title>
+    <title>School MS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -40,7 +40,7 @@
         @csrf
 
         <div class="text-center mb-4">
-            <h1 class="h1 mb-3 font-weight-bold">Travello</h1>
+            <h1 class="h1 mb-3 font-weight-bold">School MS</h1>
             <p>Create an account</p>
         </div>
 
