@@ -45,26 +45,11 @@
                 <div class="site-navigation">
                     <div class="row g-0 align-items-center">
                         <div class="col-2">
-                            <a href="index.html" class="logo m-0 float-start text-white">Volunteer</a>
+                            <a href="index.html" class="logo m-0 float-start text-white">School MS</a>
                         </div>
                         <div class="col-8 text-center">
                             <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                                 <li class="active"><a href="index.html">Home</a></li>
-                                <li class="has-children">
-                                    <a href="causes.html">Causes</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Menu One</a></li>
-                                        <li><a href="#">Menu Two</a></li>
-                                        <li class="has-children">
-                                            <a href="#">Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Sub Menu One</a></li>
-                                                <li><a href="#">Sub Menu Two</a></li>
-                                                <li><a href="#">Sub Menu Three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="news.html">News</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -76,10 +61,10 @@
                                 <span></span>
                             </a>
 
-                            <a href="#" class="call-us d-flex align-items-center">
+                            {{-- <a href="#" class="call-us d-flex align-items-center">
                                 <span class="icon-phone"></span>
                                 <span>123-489-9381</span>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
 
@@ -92,15 +77,15 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 text-left">
-                    <span class="subheading-white text-white mb-3" data-aos="fade-up">Volunteer</span>
-                    <h1 class="heading text-white mb-2" data-aos="fade-up">Give a helping hand to those who need it!
+                    <span class="subheading-white text-white mb-3" data-aos="fade-up">School</span>
+                    <h1 class="heading text-white mb-2" data-aos="fade-up">Enroll with us today
                     </h1>
                     <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50">Lorem ipsum dolor sit, amet
                         consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores
                         eos magni.</p>
                     <p data-aos="fade-up" data-aos-delay="100">
                         <a href="#" class="btn btn-primary me-4 d-inline-flex align-items-center"> <span
-                                class="icon-attach_money me-2"></span><span>Donate Now</span></a>
+                                class="icon-attach_money me-2"></span><span>Join us</span></a>
                         <a href="https://www.youtube.com/watch?v=mwtbEGNABWU"
                             class="text-white glightbox d-inline-flex align-items-center"><span
                                 class="icon-play me-2"></span><span>Watch the video</span></a>
@@ -108,7 +93,7 @@
 
                 </div>
 
-                <div class="col-lg-5">
+                <div class="col-lg-5 d-none">
                     <form action="#" class="bg-white p-5 rounded donation-form" data-aos="fade-up">
                         <h3>Quick Donation Form</h3>
                         <div class="form-field mb-3">
