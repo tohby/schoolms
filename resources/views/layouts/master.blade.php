@@ -45,7 +45,7 @@
             @yield('content')
         </div>
 
-        <footer class="bg-white p-4 mb-4 mt-4">
+        <footer class="bg-white p-4 mt-4">
             <div class="row">
                 <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                     <!-- List -->

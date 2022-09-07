@@ -66,8 +66,8 @@
             </li>
             @if (Auth::user()->role === 0)
                 <li
-                    class="nav-item {{ request()->is('admin/doctors') || request()->is('admin/doctors/*') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">
+                    class="nav-item {{ request()->is('admin/users?type=teachers') || request()->is('admin/users?type=teachers') ? 'active' : '' }}">
+                    <a href="/admin/users?type=teachers" class="nav-link">
                         <span class="sidebar-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -83,8 +83,8 @@
             @endif
             @unless(Auth::user()->role === 2)
                 <li
-                    class="nav-item {{ request()->is('admin/patients') || request()->is('admin/patients/*') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">
+                    class="nav-item {{ request()->is('admin/users/students') || request()->is('admin/users/teachers/*') ? 'active' : '' }}">
+                    <a href="/admin/users?type=students" class="nav-link">
                         <span class="sidebar-icon">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

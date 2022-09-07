@@ -23,15 +23,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index');
-    Route::resource('doctors', 'DoctorsController');
-    Route::resource('patients', 'PatientsController');
-    Route::resource('pharmacy', 'PharmacyController');
-    Route::resource('rooms', 'RoomsController');
-    Route::resource('appointments', 'AppointmentController');
-    Route::post('patients/search', 'SearchController@patients');
-    Route::post('appointments/search', 'SearchController@appointments');
-    Route::post('pharmacy/search', 'SearchController@pharmacy');
-    Route::post('doctors/search', 'SearchController@doctors');
+    Route::get('teachers', 'AdminController@teachers');
+    Route::resource('users', 'UsersController');
+    // Route::resource('patients', 'PatientsController');
+    // Route::resource('pharmacy', 'PharmacyController');
+    // Route::resource('rooms', 'RoomsController');
+    // Route::resource('appointments', 'AppointmentController');
+    // Route::post('patients/search', 'SearchController@patients');
+    // Route::post('appointments/search', 'SearchController@appointments');
+    // Route::post('pharmacy/search', 'SearchController@pharmacy');
+    Route::post('users/search', 'SearchController@users');
 });
 
 Route::get('{id}/pay', 'HomeController@pay');

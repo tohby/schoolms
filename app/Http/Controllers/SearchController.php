@@ -10,16 +10,18 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function patients(Request $request) {
+    public function users(Request $request)
+    {
         $this->validate($request, [
             'searchKey' => 'required',
         ]);
-        $patients = User::search($request->searchKey)->where('role', 2)->paginate(12);
+        $users = User::search($request->searchKey)->where('role', 2)->paginate(12);
         $totalCount = User::search($request->searchKey)->where('role', 2)->get()->count();
-        return view('admin/patients/index')->with('patients', $patients)->with('totalCount', $totalCount)->with('searchKey', $request->searchKey);
+        return view('admin/users/index')->with('users', $users)->with('totalCount', $totalCount)->with('searchKey', $request->searchKey);
     }
 
-    public function doctors(Request $request) {
+    public function doctors(Request $request)
+    {
         $this->validate($request, [
             'searchKey' => 'required',
         ]);
@@ -28,7 +30,8 @@ class SearchController extends Controller
         return view('admin/doctors/index')->with('doctors', $doctors)->with('totalCount', $totalCount)->with('searchKey', $request->searchKey);
     }
 
-    public function appointments(Request $request) {
+    public function appointments(Request $request)
+    {
         $this->validate($request, [
             'searchKey' => 'required',
         ]);
@@ -36,7 +39,8 @@ class SearchController extends Controller
         return view('admin/appointments/index')->with('appointments', $appointments)->with('searchKey', $request->searchKey);
     }
 
-    public function pharmacy(Request $request) {
+    public function pharmacy(Request $request)
+    {
         $this->validate($request, [
             'searchKey' => 'required',
         ]);
