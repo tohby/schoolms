@@ -9,7 +9,7 @@
                         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                             <li class="breadcrumb-item"><a
-                                    href="/admin/doctorsusers?type={{ $userType }}">{{ Str::of($userType)->title()->plural() }}</a>
+                                    href="/admin/users?type={{ $userType }}">{{ Str::of($userType)->title()->plural() }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Create</li>
                         </ol>
@@ -46,6 +46,59 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <div class="mb-4">
+                                <label for="email">DOB</label>
+                                <input type="date" class="form-control @error('DOB') is-invalid @enderror" name="DOB"
+                                    aria-describedby="DOB" required>
+                                @error('DOB')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <div class="mb-4">
+                                <label for="email">Address</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                    name="address" aria-describedby="address" required>
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <div class="mb-4">
+                                <label for="gender">Gender</label>
+                                <select class="form-control  @error('gender') is-invalid @enderror" name="gender" required>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        @if ($userType === 'students')
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="mb-4">
+                                    <label for="ID">Student ID</label>
+                                    <input type="text" class="form-control @error('Id') is-invalid @enderror"
+                                        name="Id" aria-describedby="text" required>
+                                    @error('Id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        @endif
                         <div class="col-lg-6 col-sm-12">
                             <div class="mb-4">
                                 <label for="email">Password</label>

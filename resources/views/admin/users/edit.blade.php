@@ -8,23 +8,23 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="/admin/doctors">Doctors</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/users">Users</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </nav>
-                    <h2 class="h4">Edit Doctor</h2>
+                    <h2 class="h4">Edit User</h2>
                 </div>
             </div>
 
             <div class="card card-body border-0 shadow table-wrapper table-responsive">
-                <form action="{{ action('DoctorsController@update', "$doctor->id") }}" method="post">
+                <form action="{{ action('UsersController@update', "$user->id") }}" method="post">
                     @csrf
                     <div class="row mb-4">
                         <div class="col-lg-8 col-sm-12">
                             <div class="mb-4">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" aria-describedby="name" value="{{ $doctor->name }}" required>
+                                    name="name" aria-describedby="name" value="{{ $user->name }}" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
                             <div class="mb-4">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" aria-describedby="email" value="{{ $doctor->email }}" required>
+                                    name="email" aria-describedby="email" value="{{ $user->email }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
                             <div class="mb-4">
                                 <label for="phone">Phone</label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    name="phone" aria-describedby="phone" value="{{ $doctor->phone }}">
+                                    name="phone" aria-describedby="phone" value="{{ $user->phone }}">
                             </div>
                             @error('phone')
                                 <span class="invalid-feedback" role="alert">

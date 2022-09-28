@@ -81,7 +81,7 @@
                                                 d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                         </svg>
                                     </a>
-                                    {{-- <a href="doctors/{{ $user->id }}/edit" class=" align-items-center fw-bold mr-3">
+                                    {{-- <a href="users/{{ $user->id }}/edit" class=" align-items-center fw-bold mr-3">
                                         Edit
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-pencil text-gray-500 ms-1" viewBox="0 0 16 16">

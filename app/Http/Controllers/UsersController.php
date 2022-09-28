@@ -57,6 +57,10 @@ class UsersController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone' => ['nullable', 'numeric'],
+            'DOB' => ['nullable', 'date'],
+            'gender' => ['nullable', 'string'],
+            'address' => ['nullable', 'string'],
+            'Id' => ['nullable', 'string']
         ]);
 
         $userType = $request->type ? $request->type : 'students';
@@ -70,6 +74,10 @@ class UsersController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'DOB' => $request->DOB,
+            'gender' => $request->gender,
+            'address' => $request->address,
+            'Id' => $request->Id,
             'password' => Hash::make($request->password),
             'role' => $type,
         ]);
@@ -114,12 +122,20 @@ class UsersController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => ['nullable', 'numeric'],
+            'DOB' => ['nullable', 'date'],
+            'gender' => ['nullable', 'string'],
+            'address' => ['nullable', 'string'],
+            'Id' => ['nullable', 'string']
         ]);
 
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
+        $user->DOB = $request->DOB;
+        $user->gender = $request->gender;
+        $user->address = $request->address;
+        $user->Id = $request->Id;
         $user->save();
 
         return redirect()->back()->with('success', 'Account details have been updated');

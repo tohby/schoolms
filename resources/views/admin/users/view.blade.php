@@ -8,11 +8,11 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="/admin/doctors">Doctors</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/users">Users</a></li>
                             <li class="breadcrumb-item active" aria-current="page">View</li>
                         </ol>
                     </nav>
-                    <h2 class="h4">View Doctor</h2>
+                    <h2 class="h4">View User</h2>
                 </div>
             </div>
 
@@ -20,15 +20,15 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h6>Name: </h6>
-                        <p>{{ $doctor->name }}</p>
+                        <p>{{ $user->name }}</p>
                     </div>
                     <div class="col-lg-8">
                         <h6>Email: </h6>
-                        <p>{{ $doctor->email }}</p>
+                        <p>{{ $user->email }}</p>
                     </div>
                     <div class="col-lg-8">
                         <h6>Phone number: </h6>
-                        <p>{{ $doctor->phone }}</p>
+                        <p>{{ $user->phone }}</p>
                     </div>
                 </div>
             </div>
