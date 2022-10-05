@@ -25,9 +25,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index');
     Route::get('teachers', 'AdminController@teachers');
     Route::resource('users', 'UsersController');
-    // Route::resource('patients', 'PatientsController');
-    // Route::resource('pharmacy', 'PharmacyController');
-    // Route::resource('rooms', 'RoomsController');
+    Route::resource('courses', 'CoursesController');
+    Route::resource('classes', 'ClassesController');
     // Route::resource('appointments', 'AppointmentController');
     // Route::post('patients/search', 'SearchController@patients');
     // Route::post('appointments/search', 'SearchController@appointments');

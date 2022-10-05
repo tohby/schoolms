@@ -17,7 +17,7 @@ class AddNewColumnsToUsersTable extends Migration
             $table->string('gender');
             $table->date('DOB')->nullable();
             $table->string('address')->nullable();
-            $table->string('Id')->nullable();
+            $table->string('studentId')->nullable();
         });
     }
 

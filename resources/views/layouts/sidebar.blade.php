@@ -51,9 +51,8 @@
                 </a>
             </li>
             <li
-                class="nav-item {{ request()->is('admin/appointments') || request()->is('admin/appointments/*') ? 'active' : '' }}">
-                {{-- <a href="/admin/appointments" class="nav-link"> --}}
-                <a href="#" class="nav-link">
+                class="nav-item {{ request()->is('admin/classes') || request()->is('admin/classes/*') ? 'active' : '' }}">
+                <a href="/admin/classes" class="nav-link">
                     <span class="sidebar-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-calendar2-event-fill" viewBox="0 0 16 16">
@@ -97,8 +96,8 @@
                     </a>
                 </li>
                 <li
-                    class="nav-item {{ request()->is('admin/pharmacy') || request()->is('admin/pharmacy/*') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">
+                    class="nav-item {{ request()->is('admin/courses') || request()->is('admin/courses/*') ? 'active' : '' }}">
+                    <a href="/admin/courses" class="nav-link">
                         <span class="sidebar-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-thermometer-half" viewBox="0 0 16 16">
