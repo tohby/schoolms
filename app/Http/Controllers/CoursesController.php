@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Courses;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CoursesController extends Controller
 {
@@ -68,9 +69,10 @@ class CoursesController extends Controller
      * @param  \App\Courses  $courses
      * @return \Illuminate\Http\Response
      */
-    public function edit(Courses $courses)
+    public function edit($id)
     {
-        //
+        $course =  Courses::find($id);
+        return view('admin/courses/edit')->with('course', $course);
     }
 
     /**
@@ -82,7 +84,16 @@ class CoursesController extends Controller
      */
     public function update(Request $request, Courses $courses)
     {
-        //
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255', Rule::unique('courses')->ignore($courses->id)],
+            'code' => ['required', 'string', 'max:255', Rule::unique('courses')->ignore($courses->id)],
+            'description' => ['nullable', 'string'],
+        ]);
+
+        $courses->name = $request->name;
+        $courses->code = $request->code;
+        $courses->description = $request->description;
+        $courses->save();
     }
 
     /**
@@ -93,6 +104,8 @@ class CoursesController extends Controller
      */
     public function destroy(Courses $courses)
     {
-        //
+
+        $courses->delete();
+        return redirect('/admin/courses')->with('success', 'Course has been removed');
     }
 }

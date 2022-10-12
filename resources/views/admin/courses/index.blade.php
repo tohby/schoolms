@@ -65,8 +65,20 @@
                                         {{ $course->name }}
                                     </div>
                                     <div class="small card-stats">
-                                        {{ $course->code }}
+                                        Code: {{ $course->code }}
                                     </div>
+                                    <div class="small card-stats">
+                                        Description: {{ $course->description }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <a href="courses/{{ $course->id }}/edit"
+                                        class="btn btn-primary btn-sm mb-2 me-2">&nbsp;Edit&nbsp;</a>
+                                    <form method="POST" action="{{ route('courses.destroy', $course->id) }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('delete') }}
+                                        <button type="submit" class="btn btn-danger btn-sm me-2">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
