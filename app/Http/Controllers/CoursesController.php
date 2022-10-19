@@ -102,9 +102,9 @@ class CoursesController extends Controller
      * @param  \App\Courses  $courses
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Courses $courses)
+    public function destroy($id)
     {
-
+        $courses = Courses::find($id);
         $courses->delete();
         return redirect('/admin/courses')->with('success', 'Course has been removed');
     }
