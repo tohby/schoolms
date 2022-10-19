@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-lg-8 col-sm-12">
                             <div class="mb-4">
-                                <label for="email">DOB</label>
+                                <label for="email">Date of birth</label>
                                 <input type="date" class="form-control @error('DOB') is-invalid @enderror" name="DOB"
                                     aria-describedby="DOB" required>
                                 @error('DOB')
