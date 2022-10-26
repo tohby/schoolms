@@ -32,6 +32,8 @@ Route::prefix('admin')->group(function () {
     // Route::post('appointments/search', 'SearchController@appointments');
     // Route::post('pharmacy/search', 'SearchController@pharmacy');
     Route::post('users/search', 'SearchController@users');
+    Route::post('classes/search', 'SearchController@classes');
+    Route::post('courses/search', 'SearchController@courses');
 });
 
 Route::get('{id}/pay', 'HomeController@pay');

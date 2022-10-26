@@ -43,6 +43,7 @@
                                 </span>
                                 <input type="text" class="form-control" name="searchKey"
                                     placeholder="Search {{ $userType }}" value="{{ $searchKey }}" required>
+                                <input type="hidden" name="type" value="{{ $userType }}">
                             </div>
                         </form>
                     </div>
