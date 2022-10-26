@@ -71,7 +71,7 @@
                                         Description: {{ $course->description }}
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="d-flex">
                                     <a href="courses/{{ $course->id }}/edit"
                                         class="btn btn-primary btn-sm mb-2 me-2">&nbsp;Edit&nbsp;</a>
                                     <form method="POST" action="{{ route('courses.destroy', $course->id) }}">
