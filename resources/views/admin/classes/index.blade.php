@@ -56,7 +56,7 @@
                         <div class="card border-0">
                             <div class="card-body">
                                 <div class="h4">
-                                    {{ $class->classId }}
+                                    <a href="classes/{{ $class->id }}">{{ $class->classId }}</a>
                                 </div>
                                 <div class="small">
                                     Course: <b> {{ $class->course->name }}</b>

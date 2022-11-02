@@ -12,11 +12,11 @@
                 <p>Do you want to continue?.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-link text-gray-600 me-auto" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-link text-gray-600 me-auto" data-bs-dismiss="modal">No</button>
                 <form method="POST" action="{{ route('users.destroy', $user->id) }}">
                     {{ csrf_field() }}
                     {{ method_field('delete') }}
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Yes</button>
                 </form>
             </div>
         </div>

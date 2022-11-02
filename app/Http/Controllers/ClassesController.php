@@ -61,9 +61,10 @@ class ClassesController extends Controller
      * @param  \App\Classes  $classes
      * @return \Illuminate\Http\Response
      */
-    public function show(Classes $classes)
+    public function show($id)
     {
-        //
+        $class = Classes::find($id);
+        return view('admin/classes/view')->with('class', $class);
     }
 
     /**
