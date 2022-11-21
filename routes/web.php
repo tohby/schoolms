@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function () {
     // Route::post('pharmacy/search', 'SearchController@pharmacy');
     Route::post('users/search', 'SearchController@users');
     Route::post('classes/search', 'SearchController@classes');
+    Route::post('classes/add-student', 'ClassesController@addStudent');
+    Route::post('classes/attendance', 'ClassesController@attendance');
     Route::post('courses/search', 'SearchController@courses');
 });
 

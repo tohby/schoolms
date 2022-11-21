@@ -30,15 +30,14 @@
                     <div class="d-flex justify-content-between">
                         <h5>Students</h6>
                             <div class="btn-toolbar mb-2 mb-md-0">
-                                <a href="/admin/classes/create"
-                                    class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
-                                    <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                <button type="button" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
+                                    data-bs-toggle="modal" data-bs-target="#modal-default"> <svg class="icon icon-xs me-2"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                     </svg>
-                                    Add new student to class
-                                </a>
+                                    Add student to class</button>
                             </div>
                     </div>
                 </div>
@@ -54,18 +53,40 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td class="fw-bold d-flex align-items-center"></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                @foreach ($class->students as $key => $student)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td class="fw-bold d-flex align-items-center">{{ $student->name }}</td>
+                                        <td>{{ $student->email }}</td>
+                                        <td>{{ $student->DOB }}</td>
+                                    </tr>
+                                @endforeach
+
 
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            <div class="card border-0 shadow table-wrapper table-responsive mt-4">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <h5>Attendance</h6>
+                            <div class="btn-toolbar mb-2 mb-md-0">
+                                <button type="button" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
+                                    data-bs-toggle="modal" data-bs-target="#modal-attendance"> <svg
+                                        class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                    </svg>
+                                    Take attendance</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        @include('admin/classes/addStudent')
+        @include('admin/classes/takeAttendance')
     </div>
 @endsection

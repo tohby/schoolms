@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Builder;
+
 use App\Classes;
 use App\Courses;
 use App\User;
+use App\Attendance;
 use Illuminate\Http\Request;
+
+use Carbon\Carbon;
 
 class ClassesController extends Controller
 {
@@ -64,7 +69,10 @@ class ClassesController extends Controller
     public function show($id)
     {
         $class = Classes::find($id);
-        return view('admin/classes/view')->with('class', $class);
+        $students = User::where('role', 2)->whereDoesntHave('classes', function ($query) use ($id) {
+            $query->where('class_id', $id);
+        })->get();
+        return view('admin/classes/view')->with('class', $class)->with('students', $students);
     }
 
     /**
@@ -99,5 +107,31 @@ class ClassesController extends Controller
     public function destroy(Classes $classes)
     {
         //
+    }
+
+    public function addStudent(Request $request)
+    {
+        $this->validate($request, [
+            'students' => ['required'],
+            'class' => ['required'],
+        ]);
+
+        $class = Classes::find($request->class);
+        $class->students()->attach($request->students);
+        return redirect('admin/classes/' . $request->class)->with(['success' => 'Students have been added to class']);
+    }
+
+    public function attendance(Request $request)
+    {
+        foreach ($request->student as $key => $student) {
+            Attendance::Create([
+                'date' => Carbon::now(),
+                'class_id' => $request->classId,
+                'student_id' => $student,
+                'status' => $request->status[$key]
+            ]);
+        }
+
+        return redirect('admin/classes/' . $request->classId)->with(['success' => 'Students have been added to class']);
     }
 }

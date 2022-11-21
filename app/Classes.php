@@ -25,6 +25,11 @@ class Classes extends Model
         return $this->belongsTo(Courses::class, 'courseId');
     }
 
+    public function students()
+    {
+        return $this->belongsToMany(User::class, 'class_student', 'class_id', 'student_id');
+    }
+
     /**
      * Get the indexable data array for the model.
      *

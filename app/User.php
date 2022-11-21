@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->hasOne(PatientInfo::class, 'patientId');
     }
 
+    public function classes()
+    {
+        return $this->belongsToMany(Classes::class, 'class_student', 'student_id', 'class_id',);
+    }
+
     /**
      * Get the indexable data array for the model.
      *
