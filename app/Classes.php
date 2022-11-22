@@ -30,6 +30,11 @@ class Classes extends Model
         return $this->belongsToMany(User::class, 'class_student', 'class_id', 'student_id');
     }
 
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'class_id');
+    }
+
     /**
      * Get the indexable data array for the model.
      *

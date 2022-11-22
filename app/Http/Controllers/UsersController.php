@@ -77,7 +77,7 @@ class UsersController extends Controller
             'DOB' => $request->DOB,
             'gender' => $request->gender,
             'address' => $request->address,
-            'studentId' => $request->Id,
+            'studentId' => $request->student_id,
             'password' => Hash::make($request->password),
             'role' => $type,
         ]);

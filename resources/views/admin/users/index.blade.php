@@ -72,7 +72,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <a href="#/{{ $user->id }}" class=" align-items-center fw-bold mr-3">
+                                    <a href="users/{{ $user->id }}?type={{ $userType }}"
+                                        class=" align-items-center fw-bold mr-3">
                                         View
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-eye ms-1" viewBox="0 0 16 16">

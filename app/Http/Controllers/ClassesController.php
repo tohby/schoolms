@@ -134,4 +134,12 @@ class ClassesController extends Controller
 
         return redirect('admin/classes/' . $request->classId)->with(['success' => 'Students have been added to class']);
     }
+
+    public function viewAttendance($class, $date)
+    {
+        $class = Classes::find($class);
+        $attendance = Attendance::where('class_id', 1)->whereDate('date', $date)->get();
+        // dd($attendance);
+        return view('admin/classes/viewAttendance')->with('attendance', $attendance)->with('class', $class)->with('date', $date);
+    }
 }

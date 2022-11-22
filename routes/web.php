@@ -35,6 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::post('classes/search', 'SearchController@classes');
     Route::post('classes/add-student', 'ClassesController@addStudent');
     Route::post('classes/attendance', 'ClassesController@attendance');
+    Route::get('classes/{class}/{date}', 'ClassesController@viewAttendance');
     Route::post('courses/search', 'SearchController@courses');
 });
 

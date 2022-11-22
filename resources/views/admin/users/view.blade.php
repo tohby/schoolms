@@ -22,6 +22,12 @@
                         <h6>Name: </h6>
                         <p>{{ $user->name }}</p>
                     </div>
+                    @if ($user->role === 2)
+                        <div class="col-lg-8">
+                            <h6>Code: </h6>
+                            <p>{{ $user->studentId }}</p>
+                        </div>
+                    @endif
                     <div class="col-lg-8">
                         <h6>Email: </h6>
                         <p>{{ $user->email }}</p>

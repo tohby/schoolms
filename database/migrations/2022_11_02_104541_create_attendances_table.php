@@ -18,8 +18,8 @@ class CreateAttendancesTable extends Migration
             $table->date('date');
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('student_id');
-            $table->foreign('class_id')->references('id')->on('classes');
-            $table->foreign('student_id')->references('id')->on('users');
+            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('status');
             $table->timestamps();
         });

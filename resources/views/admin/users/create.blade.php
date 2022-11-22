@@ -88,10 +88,10 @@
                         @if ($userType === 'students')
                             <div class="col-lg-8 col-sm-12">
                                 <div class="mb-4">
-                                    <label for="ID">Student ID</label>
-                                    <input type="text" class="form-control @error('Id') is-invalid @enderror"
-                                        name="Id" aria-describedby="text" required>
-                                    @error('Id')
+                                    <label for="student_id">Student ID</label>
+                                    <input type="text" class="form-control @error('student_id') is-invalid @enderror"
+                                        name="student_id" aria-describedby="text" required>
+                                    @error('student_id')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

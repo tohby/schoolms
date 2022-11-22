@@ -84,6 +84,18 @@
                             </div>
                     </div>
                 </div>
+                <div class="card-body">
+                    <div class="row">
+                        @foreach ($class->attendances->unique('date') as $item)
+                            <div class="col">
+                                <a href="{{ $class->id }}/{{ $item->date }}">
+                                    {{ $item->date }}
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
             </div>
         </div>
         @include('admin/classes/addStudent')
